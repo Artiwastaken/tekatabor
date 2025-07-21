@@ -90,7 +90,7 @@ div img{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: 500px; /* Adjust to match your other sections if needed */
+    max-width: page; /* Adjust to match your other sections if needed */
 }
 
 .memes-toggle {
@@ -117,20 +117,12 @@ div img{
 }
 
 .memes-images {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1em;
-    justify-content: center;
-    align-items: flex-start;
+    justify-items: center;
+    align-items: start;
     margin: 1em 0;
-}
-
-.memes-images img {
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    object-fit: cover;
 }
 
 /* Responsive layout for phones */
