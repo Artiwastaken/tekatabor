@@ -76,3 +76,18 @@ ul > li{
     color: #444;
     text-align: center;
 }
+
+/* Responsive layout for phones */
+@media (max-width: 600px) {
+  .flexrow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .metawins {
+    margin-bottom: 1em;
+  }
+  .image-with-caption img {
+    max-width: 100%;
+    height: auto;
+  }
+}
