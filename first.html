@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="memes-section">
-        <div class="memes-toggle">memes</div>
+        <div class="memes-toggle">Pretties</div>
         <div class="memes-content">
             <div class="memes-images">
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat1.jpg" alt="Meme 1">
@@ -32,5 +32,16 @@
             </div>
         </div>
     </div>
+    <script>
+    // Collapsible memes section
+    document.querySelector('.memes-toggle').addEventListener('click', function() {
+        const content = document.querySelector('.memes-content');
+        if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+            content.style.maxHeight = "0px";
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+    </script>
 </body>
 </html>
