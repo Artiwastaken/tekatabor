@@ -56,3 +56,23 @@ ul > li{
     object-fit: cover; /* Keeps aspect ratio */
     border-radius: 1rem;
 }
+
+.image-with-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px; /* match your image max-width if needed */
+}
+
+.image-with-caption img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.caption {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: #444;
+    text-align: center;
+}
