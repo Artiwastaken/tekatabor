@@ -29,16 +29,16 @@
         <div class="cat-memes-toggle">Pretties</div>
         <div class="cat-memes-content">
             <div class="cat-memes-images">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat1.jpg" alt="Meme 1">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat2.jpg" alt="Meme 2">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat3thefisheye.jpg" alt="Meme 3">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat4theslurp.jpg" alt="Meme 4">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat5.jpg" alt="Meme 5">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat6.jpg" alt="Meme 6">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat8.jpg" alt="Meme 6">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/raccon1.jpg" alt="Meme 6">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat9.jpg" alt="Meme 6">
-                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat10.jpg" alt="Meme 6">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat1.jpg" alt="Cat 1">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat2.jpg" alt="Cat 2">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat3thefisheye.jpg" alt="Cat 3">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat4theslurp.jpg" alt="Cat 4">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat5.jpg" alt="Cat 5">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat6.jpg" alt="Cat 6">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat8.jpg" alt="Cat 8">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/raccoon1.jpg" alt="Raccon 1">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat9.jpg" alt="Cat 9">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat10.jpg" alt="Cat 10">
             </div>
         </div>
         <div class="teka-memes-toggle">Teka sauce</div>
@@ -51,6 +51,18 @@
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka5.jpg" alt="Teka Meme 4">
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka6.jpg" alt="Teka Meme 4">
             </div>
+    </div>
+    <div class="custom-container">
+        <button id="openCustom">Pretty with a mouth</button>
+        <div id="customContent" style="display:none;">
+            <div class="custom-desc">What the cat saying?</div>
+            <div class="custom-input-row">
+                <input type="text" id="customText" placeholder="Type something..." />
+                <button id="reloadCatImg" class="custom-toggle">Reload cat image</button>
+            </div>
+            
+            <img id="customCatImg" src="https://cataas.com/cat/says/%20?fontSize=50&fontColor=white" alt="Custom Image" style="max-width:200px;">
+        </div>
     </div>
     <script>
     // Collapsible memes section
@@ -69,6 +81,18 @@
         } else {
             content.style.maxHeight = content.scrollHeight + "px";
         }
+    });
+    document.getElementById('openCustom').onclick = function() {
+        document.getElementById('customContent').style.display = "block";
+    };
+    function reloadCatImage() {
+        let savedText = document.getElementById('customText').value;
+        if (!savedText) savedText = " "; // Use a real space if empty
+        const encodedText = encodeURIComponent(savedText);
+        document.getElementById('customCatImg').src = `https://cataas.com/cat/says/${encodedText}?fontSize=50&fontColor=white&timestamp=${Date.now()}`;
+    }
+    document.getElementById('reloadCatImg').addEventListener('click', function() {
+        reloadCatImage();
     });
     </script>
 </body>
