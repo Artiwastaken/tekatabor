@@ -94,10 +94,10 @@ div img{
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    max-width: page; /* Adjust to match your other sections if needed */
+    max-width: 1200px; /* or whatever fits your design */
 }
 
-.memes-toggle {
+.cat-memes-toggle {
     font-weight: bold;
     cursor: pointer;
     background: #eee;
@@ -107,11 +107,49 @@ div img{
     transition: background 0.2s;
     margin-bottom: 0.5em;
 }
-.memes-toggle:hover {
+.cat-memes-toggle:hover {
     background: #ddd;
 }
 
-.memes-content {
+.cat-memes-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: #fafafa;
+    border-radius: 0 0 6px 6px;
+    padding: 0 1em;
+}
+.cat-memes-content,
+.teka-memes-content {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 1rem;
+}
+.cat-memes-images,
+.teka-memes-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1em;
+    justify-items: center;
+    align-items: start;
+    margin: 1em 0;
+}
+
+.teka-memes-toggle {
+    font-weight: bold;
+    cursor: pointer;
+    background: #eee;
+    padding: 0.5em 1em;
+    border-radius: 6px;
+    user-select: none;
+    transition: background 0.2s;
+    margin-bottom: 0.5em;
+}
+.teka-memes-toggle:hover {
+    background: #ddd;
+}
+
+.teka-memes-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
@@ -120,14 +158,7 @@ div img{
     padding: 0 1em;
 }
 
-.memes-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1em;
-    justify-items: center;
-    align-items: start;
-    margin: 1em 0;
-}
+
 
 .side-border {
     position: fixed;
@@ -164,11 +195,9 @@ body {
     max-width: 100%;
     height: auto;
   }
-    .memes-images {
-        flex-direction: column;
-        align-items: center;
-    }
-    .memes-images img {
-        max-width: 100%;
+
+    .cat-memes-images,
+    .teka-memes-images {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
 }

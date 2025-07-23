@@ -10,14 +10,14 @@
     <div class="side-border left"></div>
     <div class="side-border right"></div>
     <div class="eloszo">
-        <div class="title">this is an epic title.</div>
+        <div class="title">Loocat this</div>
         <div class="paragraph">this is an even more epic paragraph.</div>
         <div class="paragraph">I really dunno what to write here, but it looks damn fine and better if there is more text.</div>
     </div>
     <div class="flexrow">
         <ul class="metawins">Méta győzelmek:
             <li>2023 - Kakapella</li>
-            <li>2024 - valami, nem emlékszünk de nyertünk</li>
+            <li>2024 - Fogyatéka</li>
             <li>2025 - Surströmming</li>
         </ul>
         <div class="image-with-caption">
@@ -26,9 +26,9 @@
         </div>
     </div>
     <div class="memes-section">
-        <div class="memes-toggle">Pretties</div>
-        <div class="memes-content">
-            <div class="memes-images">
+        <div class="cat-memes-toggle">Pretties</div>
+        <div class="cat-memes-content">
+            <div class="cat-memes-images">
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat1.jpg" alt="Meme 1">
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat2.jpg" alt="Meme 2">
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat3thefisheye.jpg" alt="Meme 3">
@@ -39,14 +39,31 @@
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/raccon1.jpg" alt="Meme 6">
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat9.jpg" alt="Meme 6">
                 <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/cat10.jpg" alt="Meme 6">
-
             </div>
         </div>
+        <div class="teka-memes-toggle">Teka sauce</div>
+        <div class="teka-memes-content">
+            <div class="teka-memes-images">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka1.jpg" alt="Teka Meme 1">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka2.jpg" alt="Teka Meme 2">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka3.jpg" alt="Teka Meme 3">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka4.jpg" alt="Teka Meme 4">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka5.jpg" alt="Teka Meme 4">
+                <img src="https://raw.githubusercontent.com/Artiwastaken/tekatabor/main/pics/teka6.jpg" alt="Teka Meme 4">
+            </div>
     </div>
     <script>
     // Collapsible memes section
-    document.querySelector('.memes-toggle').addEventListener('click', function() {
-        const content = document.querySelector('.memes-content');
+    document.querySelector('.cat-memes-toggle').addEventListener('click', function() {
+        const content = document.querySelector('.cat-memes-content');
+        if (content.style.maxHeight && content.style.maxHeight !== "0px") {
+            content.style.maxHeight = "0px";
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+    document.querySelector('.teka-memes-toggle').addEventListener('click', function() {
+        const content = document.querySelector('.teka-memes-content');
         if (content.style.maxHeight && content.style.maxHeight !== "0px") {
             content.style.maxHeight = "0px";
         } else {
